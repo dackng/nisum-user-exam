@@ -1,0 +1,36 @@
+spring:  
+  profiles:
+    active: dev
+
+logging:
+  level:
+    com.nisum.exam: DEBUG
+
+nisum:
+  jwt-secret: n1Sum_$3crEt_kEy
+  jwt-expiration: 1000000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - health
+        - info
+        - metrics
+   
+---
+spring:
+    profiles: dev
+    h2:
+      console:
+        enabled: true
+    datasource:
+      driverClassName: org.h2.Driver
+      url: jdbc:h2:mem:user
+      username: sa
+      password: 
+    jpa:
+      show_sql: true
+      hibernate:
+        ddl-auto: none

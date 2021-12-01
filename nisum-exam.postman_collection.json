@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "e574ecb7-40eb-435f-b2ec-531ee0645825",
+		"name": "nisum-exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "save user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Diego\",\n    \"email\": \"dackng@dominio.cl\",\n    \"password\": \"Test10\",\n    \"phones\": [\n        {\n            \"number\": \"1234567\",\n            \"citycode\": \"1\",\n            \"contrycode\": \"57\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/open-api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"open-api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzgzMjI1MDksInN1YiI6ImRhY2tuZ0Bkb21pbmlvLmNsIiwiZXhwIjoxNjM4MzIzNTA5fQ.dc0c9EkDoe5l4pRaVgzvQDAQmmRFn_gRAysepKs51_jDmyNROmhCbmCvGuTWrBxZRPMrQG-om5CSS8OkLqNzvA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
